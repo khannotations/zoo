@@ -5,6 +5,7 @@ text = "<table class='table table-striped'>\n"
 CSV.foreach("/Users/rafi/Desktop/applications2012.csv") do |row|
   if count == 0
     text += "<thead>\n<tr>"
+    text += "<td>Mark</td>"
     rowcount = 0
     infos = []
     row.each do |item|
@@ -23,6 +24,7 @@ CSV.foreach("/Users/rafi/Desktop/applications2012.csv") do |row|
     text += "</tr>\n</thead>\n<tbody>\n"
   else
     text+= "<tr>"
+    text += "<td><input type=checkbox /></td>"
     rowcount = 0
     infos = []
     row.each do |item|
