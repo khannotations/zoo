@@ -30,7 +30,7 @@ $(document).ready ->
   ]
   backs = $(".back")
   for b, i in bImages
-    $(backs[i]).smartbg "/images/backgrounds/#{bImages[i]}", 200
+    $(backs[i]).smartbg "/images/backgrounds/#{bImages[i]}", 50
 
   num = Math.floor(Math.random()*bImages.length)
   $(backs[num]).addClass "shown"
@@ -38,7 +38,7 @@ $(document).ready ->
     $(".back.shown").removeClass "shown"
     num = Math.floor(Math.random()*bImages.length)
     $(backs[num]).addClass "shown"
-  , 2000
+  , 10000
 
   $(window).scroll ->
     if $("body").scrollTop() < $(window).height() - 40 
