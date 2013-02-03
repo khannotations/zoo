@@ -1,0 +1,103 @@
+     qh27|           Qin Huang| Sat 21:46|  pts/1|    36|dhcp-128-36-159-239.|     ladybug|
+    nmb38|        Nina Blanson| Sat 20:12|  pts/0|     -|dhcp-128-36-73-119.w|    scorpion|
+    ar733|  Aditi Ramachandran| Sat 21:50|  pts/0|     4|c-174-63-29-148.hsd1|       macaw|
+    ar733|  Aditi Ramachandran| Sat 17:45|  pts/2|    56|c-174-63-29-148.hsd1|       macaw|
+    ar733|  Aditi Ramachandran| Sat 20:47|  pts/3|     2|c-174-63-29-148.hsd1|       macaw|
+    ar733|  Aditi Ramachandran| Sat 21:59|  pts/4|    21|c-174-63-29-148.hsd1|       macaw|
+    chc45|     Christopher Cai|    Jan 23|  pts/1|   10d|               19:21|       macaw|
+    chc45|     Christopher Cai|    Jan 24|  pts/0|    9d|               01:35|       rhino|
+     ezp2|            Eric Pan| Sat 01:42|  pts/2| 17:59|ericzpan-pc.pc.yale.|       rhino|
+    rer34|     Rachel Rudinger| Thu 17:07| *pts/5|     -|                    |       rhino|
+     te77|        Tihomir Elek|    Jan 24|  pts/1|    8d|               22:40|       rhino|
+    aco26|     Andrew ODonnell|    Jan 24|  pts/7|    9d|               19:07|       viper|
+     dgn4|        Daniel Noble|    Jan 23|  pts/1|   10d|               16:23|       viper|
+     hcf8|         Hunter Ford| Sat 17:28|  pts/5|  4:55|dhcp-128-36-65-238.w|       viper|
+    mfr37|      Moriah Rahamim|    Jan 23|  pts/4|    9d|               23:25|       viper|
+    mfr37|      Moriah Rahamim|    Jan 24|*pts/10|    9d|               00:15|       viper|
+     vp96|       Vaskar Pahari|    Jan 24|  pts/9|    8d|               22:40|       viper|
+    mta26|      Matthew Ambler| Wed 15:55|  pts/0|    3d|                    |     cricket|
+    chc45|     Christopher Cai|    Jan 22|  pts/1|   11d|               19:37|        newt|
+    ebm25|          Erin Maher| Sat 15:46|  pts/2|  6:37|                    |        newt|
+     krv6|  Kartik Venkatraman| Sat 17:48|  pts/7|  4:35|turtle.zoo.cs.yale.e|        newt|
+    mta26|      Matthew Ambler| Tue 20:04|  pts/3|    4d|                    |        newt|
+     qz53|         Quinn Zhang| Sat 22:24|  pts/1|     -|       128.36.205.95|     termite|
+     aef3|   Alexander Fayette| Sat 17:08|  pts/1|    58|dhcp-128-36-205-128.|      python|
+    ac972|    Abhishek Chandra|    Jan 24| pts/14|    9d|               21:45|        tick|
+     brl7|            Brian Li|    Jan 24| pts/17|    9d|               19:21|        tick|
+     mhn4|     Michael Nestler| Sat 16:06|  pts/7|  6:16|       128.36.85.161|        tick|
+      sce|      Stan Eisenstat| Tue 15:19|  pts/3|    1d|    opus.cs.yale.edu|        tick|
+     te77|        Tihomir Elek|    Jan 25|  pts/0|    8d|               18:16|        tick|
+    yh362|        Youkow Homma|    Jan 20|  pts/9|   13d|               20:26|        tick|
+    dfp22|       Derrik Petrin| Sat 19:15|  pts/2|    14|dhcp-128-36-89-54.wi|        frog|
+    mta26|      Matthew Ambler| Sat 16:37|  pts/0|  5:46|                    |        frog|
+    mta26|      Matthew Ambler| Sat 16:37| *pts/1|  4:31|                    |        frog|
+     te77|        Tihomir Elek|    Jan 24| *pts/8|     -|               17:16|        frog|
+    chc45|     Christopher Cai|    Jan 23| *pts/6|     -|               23:18|       cobra|
+    ebm25|          Erin Maher|    Jan 24|*pts/11|     -|               22:32|       cobra|
+     icd4|   Isabella D'Agosto|    Jan 21|  pts/2|   12d|               20:15|       cobra|
+    jpb55|     Justin Bachorik|    Jan 15|  pts/1|   18d|               11:34|       cobra|
+     te77|        Tihomir Elek|    Jan 25| *pts/7|     -|               13:59|       cobra|
+    yw337|            Yujie Wu|    Jan 22| *pts/4|     -|               23:25|       cobra|
+    eh425|             Eric Ho|    Jan 24|  pts/2|    8d|               23:47|   bumblebee|
+     evl4|            Earl Lee| Sat 18:50|  pts/0|     -|dhcp-128-36-203-155.|   bumblebee|
+    fak23|          Faiaz Khan| Sat 22:10|  pts/5|     -|dhcp-128-36-59-253.w|   bumblebee|
+    sp576|     Simon Podhajsky| Sat 21:21|  pts/3|    22|                  :0|   bumblebee|
+    sp576|     Simon Podhajsky| Sat 21:10|    *:0|     -|             console|   bumblebee|
+    sp576|     Simon Podhajsky| Sat 21:26|  pts/4|    57|                :0.0|   bumblebee|
+    hrc23|   Hannah Constantin| Sat 21:27|    *:0|     -|             console|      cicada|
+    hrc23|   Hannah Constantin| Sat 21:30|  pts/0|    52|                  :0|      cicada|
+    aj345|          Aditi Jain| Thu 16:22|  pts/6|    2d|                    | rattlesnake|
+    aj345|          Aditi Jain| Thu 16:23| *pts/7|    2d|                    | rattlesnake|
+     evl4|            Earl Lee| Sat 16:01|  pts/8|    20|dhcp-128-36-203-155.| rattlesnake|
+     krv6|  Kartik Venkatraman| Sat 17:46|  pts/1|  4:37|frog.zoo.cs.yale.edu| rattlesnake|
+   lab224|       Liam Bressler|    Jan 24|  pts/4|    8d|               22:53| rattlesnake|
+     ahu2|     Aayush Upadhyay| Sat 22:05|  pts/0|    18|dhcp-128-36-69-21.wi|       perch|
+    mag24|      Miles Grimshaw| Sat 14:49|  pts/7|  4:10|dhcp-128-36-73-215.w|       perch|
+    mta26|      Matthew Ambler| Sat 14:00|  pts/1|  8:23|                    |       perch|
+    mta26|      Matthew Ambler|    Jan 26|  pts/2|    7d|               19:27|       perch|
+    mta26|      Matthew Ambler| Sat 14:00| *pts/4|  7:44|                    |       perch|
+    mta26|      Matthew Ambler|    Jan 26|  pts/5|    7d|               19:33|       perch|
+     zpx2|           Zipeng Xu| Sat 19:08|  pts/9|    21|dhcp-128-36-169-240.|       perch|
+     zpx2|           Zipeng Xu| Sat 19:29| pts/11|    58|dhcp-128-36-169-240.|       perch|
+    jaz27|      Jeremy Zitomer|    Jan 24| *pts/9|     -|               20:54|     dolphin|
+     te77|        Tihomir Elek|    Jan 23| *pts/8|     -|               23:57|     dolphin|
+    fak23|          Faiaz Khan| Sat 19:23|  pts/4|  2:59|dhcp-128-36-59-253.w|     peacock|
+    mta26|      Matthew Ambler| Sat 12:46|  pts/0|  9:37|                    |     peacock|
+    mta26|      Matthew Ambler| Sat 12:46| *pts/1|  9:36|                    |     peacock|
+    mta26|      Matthew Ambler| Sat 12:48|  pts/2|  9:36|                    |     peacock|
+    mta26|      Matthew Ambler| Sat 12:48| *pts/3|  8:24|                    |     peacock|
+    mta26|      Matthew Ambler| Tue 22:46|  pts/2|    3d|                    |      jaguar|
+    mta26|      Matthew Ambler| Tue 22:47| *pts/3|    3d|                    |      jaguar|
+    mta26|      Matthew Ambler| Tue 22:50|  pts/4|    3d|                    |      jaguar|
+     ang6|      Alexander Goel| Sat 21:33|  pts/1|     2|      130.132.31.250|       hippo|
+     mpc6|     Miles Calabresi|    Jan 24|  pts/3|    9d|               20:00|       hippo|
+     te77|        Tihomir Elek|    Jan 25|  pts/0|    8d|               16:47|       hippo|
+    ac972|    Abhishek Chandra|    Jan 25|  pts/3|    8d|               12:00|        swan|
+    chc45|     Christopher Cai|    Jan 23|  pts/4|   10d|               13:51|        swan|
+    mta26|      Matthew Ambler| Wed 11:11|  pts/5|    3d|                    |        swan|
+    rca26|        Russell Ault| Sat 21:57|  pts/0|     6|                  :0|        swan|
+    rca26|        Russell Ault| Sat 21:56|    *:0|     -|             console|        swan|
+    sl845|         Shuying Luo| Fri 17:37| *pts/6|     -|                    |        swan|
+    sl845|         Shuying Luo| Wed 19:42| *pts/7|     -|                    |        swan|
+    ebm25|          Erin Maher|    Jan 23| *pts/6|     -|               23:06|      monkey|
+    rer34|     Rachel Rudinger| Sat 22:23|  pts/0|     -|                    |      monkey|
+    rer34|     Rachel Rudinger| Sat 22:23| *pts/1|     -|                    |      monkey|
+    rer34|     Rachel Rudinger| Sat 22:23| *pts/3|     -|                    |      monkey|
+    rer34|     Rachel Rudinger| Sat 22:23|    *:0|     -|             console|      monkey|
+    ac972|    Abhishek Chandra|    Jan 23|  pts/1|   10d|               20:16|        lion|
+    cjh57|Christopher Homburge|    Jan 16|  pts/2|   17d|               18:40|        lion|
+   jcm236|       Jared Milfred| Sat 20:25|  pts/3|  1:20|dhcp-128-36-145-218.|        lion|
+    tmt29|          Tommy Tang|    Jan 25|  pts/6|    8d|               01:15|        lion|
+    yh362|        Youkow Homma|    Jan 20|  pts/5|   13d|               18:03|        lion|
+    chc45|     Christopher Cai|    Jan 21|  pts/3|   12d|               19:23|    cardinal|
+    mfr37|      Moriah Rahamim|    Jan 23|  pts/4|   10d|               14:19|    cardinal|
+     pdp9|         Paul Parell|    Jan 24|  pts/7|    9d|               19:30|    cardinal|
+    bew28|     Blake Woodworth|    Jan 24|  pts/3|    9d|               18:16|     grizzly|
+    bew28|     Blake Woodworth|    Jan 24|  pts/5|    9d|               18:18|     grizzly|
+    ghb32|Guillaume BachelardB|    Jan 24| pts/10|    9d|               20:10|     grizzly|
+    lag48|       Laurel German|    Jan 24|  pts/7|    9d|               19:17|     grizzly|
+    mta26|      Matthew Ambler|    Jan 21|  pts/1|   12d|               18:23|     grizzly|
+     te77|        Tihomir Elek|    Jan 24|  pts/0|    9d|               12:26|     grizzly|
+    ac972|    Abhishek Chandra|    Jan 20|  pts/3|   13d|               17:41|       gator|
+    kr358|             Kun Ren| Sat 13:35|  pts/0|  5:11|   shoyu.cs.yale.edu|       gator|
+    yw337|            Yujie Wu|    Jan 23|  pts/4|   10d|               20:20|       gator|

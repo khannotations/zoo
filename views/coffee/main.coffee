@@ -34,13 +34,10 @@ $(document).ready ->
 
   num = Math.floor(Math.random()*bImages.length)
   $(backs[num]).addClass "shown"
-  console.log "Starting with #{bImages[num]}"
   setInterval ->
     $(".back.shown").removeClass "shown"
     num = Math.floor(Math.random()*bImages.length)
     $(backs[num]).addClass "shown"
-    console.log num
-    console.log "Showing #{bImages[num]}"
   , 10000
 
   $(window).scroll ->
@@ -55,3 +52,18 @@ $(document).ready ->
     $("body,html,document").animate
         scrollTop: dest-40
       , 300
+
+  animals = ["aphid", "bumblebee", "cardinal", "chameleon", "cicada", "cobra", "cricket", "frog", "gator", "giraffe", "grizzly", "hare", "hawk", "hippo", "hornet", "jaguar", "ladybug", "lion", "macaw", "monkey", "newt", "peacock", "perch", "python", "rattlesnake", "raven", "rhino", "scorpion", "swan", "termite", "tick", "tiger", "turtle", "viper", "woodpecker", "zebra"] 
+  used = {}
+  $.get("http://bumblebee.zoo.cs.yale.edu:6789/zoo", (data) ->
+    if data
+      lines = data.split "\n"
+      for line in lines
+        entries = line.split "|"
+        node = entries[6].replace /^\s+|\s+$/g, ""
+        for entry in entries
+          entry = entry.replace /^\s+|\s+$/g, ""
+          console.log entry
+    else
+      alert("request failed...")
+  )
