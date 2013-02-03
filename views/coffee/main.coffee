@@ -34,10 +34,13 @@ $(document).ready ->
 
   num = Math.floor(Math.random()*bImages.length)
   $(backs[num]).addClass "shown"
+  console.log "Starting with #{bImages[num]}"
   setInterval ->
     $(".back.shown").removeClass "shown"
     num = Math.floor(Math.random()*bImages.length)
     $(backs[num]).addClass "shown"
+    console.log num
+    console.log "Showing #{bImages[num]}"
   , 10000
 
   $(window).scroll ->
