@@ -12,13 +12,11 @@
         - first = animals[2*i] if 2*i < num
         - second = animals[2*i+1] if 2*i+1 < num
         %tr
-          %td= first
+          %td{:name => "#{first}"}= first
           %td
             %img{:src => "/images/backgrounds/#{first}.jpg"}
-          %td A fun fact...
-          %td= second
+          %td{:name => "#{second}"}= second
           %td
             %img{:src => "/images/backgrounds/#{second}.jpg"}
-          %td A fun fact...
 
       

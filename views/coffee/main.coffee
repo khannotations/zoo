@@ -58,12 +58,17 @@ $(document).ready ->
   $.get("http://bumblebee.zoo.cs.yale.edu:6789/zoo", (data) ->
     if data
       lines = data.split "\n"
+      console.log "Number of lines: #{lines.length}"
       for line in lines
         entries = line.split "|"
-        node = entries[6].replace /^\s+|\s+$/g, ""
-        for entry in entries
-          entry = entry.replace /^\s+|\s+$/g, ""
-          console.log entry
+        if entries.length is 8
+          node = entries[6].replace /^\s+|\s+$/g, ""
+          if node in animals 
+            ip = entries[5]
+            if ip and /\./.test ip
+              used[node] = true
+      for key,val of used
+        
     else
-      alert("request failed...")
+      console.log "request failed..."
   )
