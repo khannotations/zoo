@@ -9,24 +9,24 @@ $(document).ready ->
     this
   # Setup
   bImages = [
-    # "cardinal.jpg",
-    # "chameleon.jpg",
-    # "frog.jpg",
-    # "giraffe.jpg",
-    # "grizzly.jpg",
-    # "hare.jpg",
-    # "hawk.jpg",
-    # "hippo.jpg",
-    # "jaguar.jpg",
-    # "ladybug.jpg",
-    # "monkey.jpg"
-    # "lion.jpg",
-    # "rhino.jpg",
-    # "swan.jpg",
+    "cardinal.jpg",
+    "chameleon.jpg",
+    "frog.jpg",
+    "giraffe.jpg",
+    "grizzly.jpg",
+    "hare.jpg",
+    "hawk.jpg",
+    "hippo.jpg",
+    "jaguar.jpg",
+    "ladybug.jpg",
+    "monkey.jpg"
+    "lion.jpg",
+    "rhino.jpg",
+    "swan.jpg",
     "tiger.jpg"
-    # "turtle.jpg",
-    # "peacock.jpg",
-    # "zebra"
+    "turtle.jpg",
+    "peacock.jpg",
+    "zebra.jpg"
   ]
   backs = $(".back")
   for b, i in bImages
