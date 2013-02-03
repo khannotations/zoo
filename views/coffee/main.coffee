@@ -7,11 +7,51 @@ $(document).ready ->
       $(t).fadeIn time, ->
         cb t if typeof cb is "function"
     this
-  # Setup
+  animals = [
+    "aphid",
+    "bumblebee",
+    "cardinal",
+    "chameleon",
+    "cicada",
+    "cobra",
+    "cricket",
+    "frog",
+    "gator",
+    "giraffe",
+    "grizzly",
+    "hare",
+    "hawk",
+    "hippo",
+    "hornet",
+    "jaguar",
+    "ladybug",
+    "lion",
+    "macaw",
+    "monkey",
+    "newt",
+    "peacock",
+    "perch",
+    "python",
+    "rattlesnake",
+    "raven",
+    "rhino",
+    "scorpion",
+    "swan",
+    "termite",
+    "tick",
+    "tiger",
+    "turtle",
+    "viper",
+    "woodpecker",
+    "zebra"
+  ]
+  # Background images are just the prettiest animals
   bImages = [
     "cardinal.jpg",
     "chameleon.jpg",
+    "cobra.jpg",
     "frog.jpg",
+    "gator.jpg",
     "giraffe.jpg",
     "grizzly.jpg",
     "hare.jpg",
@@ -19,13 +59,19 @@ $(document).ready ->
     "hippo.jpg",
     "jaguar.jpg",
     "ladybug.jpg",
-    "monkey.jpg"
     "lion.jpg",
+    "macaw.jpg",
+    "monkey.jpg",
+    "newt.jpg",
+    "peacock.jpg",
+    "perch.jpg",
+    "python.jpg",
+    "rattlesnake.jpg",
     "rhino.jpg",
     "swan.jpg",
-    "tiger.jpg"
+    "tiger.jpg",
     "turtle.jpg",
-    "peacock.jpg",
+    "woodpecker.jpg",
     "zebra.jpg"
   ]
   backs = $(".back")
@@ -53,12 +99,10 @@ $(document).ready ->
         scrollTop: dest-40
       , 300
 
-  animals = ["aphid", "bumblebee", "cardinal", "chameleon", "cicada", "cobra", "cricket", "frog", "gator", "giraffe", "grizzly", "hare", "hawk", "hippo", "hornet", "jaguar", "ladybug", "lion", "macaw", "monkey", "newt", "peacock", "perch", "python", "rattlesnake", "raven", "rhino", "scorpion", "swan", "termite", "tick", "tiger", "turtle", "viper", "woodpecker", "zebra"] 
-  used = {}
+  nodes = {}
   $.get("http://bumblebee.zoo.cs.yale.edu:6789/zoo", (data) ->
     if data
       lines = data.split "\n"
-      console.log "Number of lines: #{lines.length}"
       for line in lines
         entries = line.split "|"
         if entries.length is 8
@@ -66,9 +110,10 @@ $(document).ready ->
           if node in animals 
             ip = entries[5]
             if ip and /\./.test ip
-              used[node] = true
-      for key,val of used
+              nodes[node] = true
+      for key,val of nodes
+        $("td[name=#{key}]").addClass "used"
         
     else
-      console.log "request failed..."
+      alert "Zoo availability data unavailable :("
   )

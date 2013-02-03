@@ -2,21 +2,57 @@
   .container
     .contain
       %p.header Playground
-      %p.big A fun factsheet for all the animals!
-      - animals = %w(viper hornet cricket newt termite python cicada bumblebee cobra frog tick turtle aphid ladybug chameleon rattlesnake scorpion perch gator grizzly cardinal giraffe swan rhino monkey lion hare tiger zebra hippo jaguar macaw peacock raven hawk woodpecker).sort
-    %table.animal-table
-      - count = 0
-      - num = animals.count
-      - half = num/2
-      - half.times do |i|
-        - first = animals[2*i] if 2*i < num
-        - second = animals[2*i+1] if 2*i+1 < num
-        %tr
-          %td{:name => "#{first}"}= first
-          %td
-            %img{:src => "/images/backgrounds/#{first}.jpg"}
-          %td{:name => "#{second}"}= second
-          %td
-            %img{:src => "/images/backgrounds/#{second}.jpg"}
+      - animals = %w(viper hornet cricket newt termite python cicada bumblebee cobra frog tick turtle aphid ladybug chameleon rattlesnake scorpion perch gator grizzly cardinal giraffe swan rhino monkey lion hare tiger zebra hippo jaguar macaw peacock raven hawk woodpecker)
+      - animals.sort.each do |a|
+        - puts "\"#{a}\","
 
-      
+      %p.big Open Zoo
+      %table.animal-table
+        %tr
+          - 6.times do |num|
+            - a = animals[num]
+            %td{:name => "#{a}"}
+              %img{:src => "/images/animals/#{a}.jpg"}
+              %p.caption= a
+      .break
+      %table.animal-table
+        %tr
+          - 6.times do |num|
+            - a = animals[num+6]
+            %td{:name => "#{a}"}
+              %img{:src => "/images/animals/#{a}.jpg"}
+              %p.caption= a
+        %tr
+          - 6.times do |num|
+            - a = animals[num+12]
+            %td{:name => "#{a}"}
+              %img{:src => "/images/animals/#{a}.jpg"}
+              %p.caption= a
+      .break
+
+      %p.big Closed Zoo
+
+      %table.animal-table.small
+        %tr
+          - 4.times do |num|
+            - a = animals[num+18]
+            %td{:name => "#{a}"}
+              %img{:src => "/images/animals/#{a}.jpg"}
+              %p.caption= a
+      .break
+
+      %table.animal-table
+        %tr
+          - 7.times do |num|
+            - a = animals[num+22]
+            %td{:name => "#{a}"}
+              %img{:src => "/images/animals/#{a}.jpg"}
+              %p.caption= a
+      %table.animal-table
+        %tr
+          - 7.times do |num|
+            - a = animals[num+29]
+            %td{:name => "#{a}"}
+              %img{:src => "/images/animals/#{a}.jpg"}
+              %p.caption= a
+
