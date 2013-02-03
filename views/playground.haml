@@ -1,0 +1,24 @@
+.panel{:name => "playground"}
+  .container
+    .contain
+      %p.header Playground
+      %p.big A fun factsheet for all the animals!
+      - animals = %w(viper hornet cricket newt termite python cicada bumblebee cobra frog tick turtle aphid ladybug chameleon rattlesnake scorpion perch gator grizzly cardinal giraffe swan rhino monkey lion hare tiger zebra hippo jaguar macaw peacock raven hawk woodpecker).sort
+    %table.animal-table
+      - count = 0
+      - num = animals.count
+      - half = num/2
+      - half.times do |i|
+        - first = animals[2*i] if 2*i < num
+        - second = animals[2*i+1] if 2*i+1 < num
+        %tr
+          %td= first
+          %td
+            %img{:src => "/images/backgrounds/#{first}.jpg"}
+          %td A fun fact...
+          %td= second
+          %td
+            %img{:src => "/images/backgrounds/#{second}.jpg"}
+          %td A fun fact...
+
+      

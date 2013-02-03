@@ -92,10 +92,15 @@ code {
 
 .back {
   z-index: -2;
+  opacity: 0;
+  &.shown {
+    opacity: 1;
+  }
+  @include transition(opacity 1s);
 }
 
 .back-overlay {
-  background-color: rgba(white, 0.8);
+  background-color: rgba(white, 0.9);
   z-index: -1;
 }
 
@@ -129,3 +134,4 @@ code {
 @import "index";
 @import "info";
 @import "faq";
+@import "playground";

@@ -9,14 +9,38 @@ $(document).ready ->
     this
   # Setup
   bImages = [
-    "lion.jpg",
-    "bumblebee.jpg"
+    # "cardinal.jpg",
+    # "chameleon.jpg",
+    # "frog.jpg",
+    # "giraffe.jpg",
+    # "grizzly.jpg",
+    # "hare.jpg",
+    # "hawk.jpg",
+    # "hippo.jpg",
+    # "jaguar.jpg",
+    # "ladybug.jpg",
+    # "monkey.jpg"
+    # "lion.jpg",
+    # "rhino.jpg",
+    # "swan.jpg",
+    "tiger.jpg"
+    # "turtle.jpg",
+    # "peacock.jpg",
+    # "zebra"
   ]
-  # Load large background images separately
-  $(".back").smartbg("/images/backgrounds/lion.jpg", 200)
+  backs = $(".back")
+  for b, i in bImages
+    $(backs[i]).smartbg "/images/backgrounds/#{bImages[i]}", 200
+
+  num = Math.floor(Math.random()*bImages.length)
+  $(backs[num]).addClass "shown"
+  setInterval ->
+    $(".back.shown").removeClass "shown"
+    num = Math.floor(Math.random()*bImages.length)
+    $(backs[num]).addClass "shown"
+  , 2000
 
   $(window).scroll ->
-    console.log $("body").scrollTop(), $(window).height()
     if $("body").scrollTop() < $(window).height() - 40 
       $("#zoo-nav").slideUp("fast")
     else
