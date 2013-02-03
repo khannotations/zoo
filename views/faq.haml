@@ -1,0 +1,36 @@
+.panel{:name => "faq"}
+  .container
+    .contain
+      %p.header FAQ
+      .question AGH! When I type "backspace" in Emacs, bizarre things happen, none of which include the deletion of the character immediately preceding the cursor position. What's going on?
+      .answer 
+        %p While the shell accepts two keystroke inputs as backspace, Emacs declares that there can only be one. There are two ways to get around this that will be described here.
+        %p The first: under remote login, if you're using SSH Secure Shell, you can change your settings to map "backspace" to "delete". (Edit->Settings->Profile->Keyboard).
+        %p If you don't like that (and there's good reason to feel that way, since it has to be done at every SSH client you use), you can put the following line in your .emacs file in your home directory: 
+        %p (global-set-key "\C-h" 'backward-delete-char) 
+      .question How do I jump to a line in Emacs?
+      .answer
+        Press ALT+x, then type goto-line. This is annoying to have to do every time you want to use this functionality, and it doesn't even work by default over remote login from Windows, so I recommend that you edit your .emacs file with something like this:
+        %p (global-set-key "\C-xg" 'goto-line)
+      .question How long will I get to keep my zoo account after I graduate?
+      .answer
+        %p 
+          In most cases, 19 months. See 
+          %a{:href=>"http://cs-www.cs.yale.edu/cs-FAQs/policy.html", :target=>"_blank"} this page 
+          for more details.
+      .question Does sound work in the zoo?
+      .answer
+        %p Sound is working in the Zoo now. Plugging in headphones will work fine. 
+        %p The volume control applet in the taskbar of KDE and gnome adjusts the volume on the wrong control, and individual music playing apps seem to vary as to what control the volume slider adjusts. So I recommend running "alsamixer" in a terminal window and fiddling with the "PCM" and "Headphones" controls if you want to adjust the volume.
+      .question Is it possible to access my Pantheon space from a Unix machine in the Zoo?
+      .answer
+        %p
+          I have tried to use gFTP. After entering the host, port, username, and password, the program says "Connecting..." but never makes a connection.
+        %p 
+          In my experience, gnomevfs, upon which gftp may be relying, is very flaky. You should use konqueror, which I know to work. type 'konqueror&' at a prompt, or find it in the (KDE) menus. enter 
+          %code sftp://netid@eli.yale.edu/homexx/wxx/
+        %p 
+          Or if you want to fetch a file off the Pantheon using only the shell, you can try: 
+        %code.block ssh -t eli.yale.edu "scp YourFileNameHere tiger.zoo.cs.yale.edu:"
+        %p 
+          Give the file name relative to your home directory. Not terribly intuitive, but nice if you're in a hurry.

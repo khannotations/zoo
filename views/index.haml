@@ -1,3 +1,18 @@
-%h1 Applications
+.zoo-top
+  .container
+    .contain
+      %p.header.main-text The Zoo at Yale University
+      .zoo-desc.inline-block
+        %p 
+          The Zoo is a 
+          %b cluster of 38 multiprocessor Intel computers 
+          available for Yale Computer Science students. Each node—named after a different animal—is running either Linux (openSUSE) or Windows. 
 
-= haml :apps
+    %table.zoo-main-bar.zoo-bar
+      = haml :nav
+.panels
+  = haml :info
+  = haml :ssh
+  = haml :tricks
+  = haml :dsac
+  = haml :faq

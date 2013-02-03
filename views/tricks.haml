@@ -1,0 +1,74 @@
+.panel{:name => "tricks"}
+  .container
+    .contain
+      %p.header Tips and Tricks
+      %p.big Printing
+      %p.text You can print from a Zoo machine application, from the shell, or remotely.
+      %p.text 
+        From the shell, you can use 
+        %b lpr:
+      %code.block
+        > lpr &lt;filename&gt;
+        %span.grey # print the file given by filename on zoo1, the default printer. The file may be plain text or Postscript formatted.
+        %br
+        > lpr -P zoo2 &lt;filename&gt;
+        %span.grey # print filename on zoo2.
+        %br
+        > lpr -K n &lt;filename&gt; 
+        %span.grey # print n copies of filename on the default printer, zoo1.
+      %p.big Changing your shell
+      %p.text 
+        When you log in and get to a prompt the operating system starts a program called a shell, which allows you to launch programs and interact with the file system. All commands you type at the shell's prompt are interpreted and executed by the shell.
+      %p.text 
+        There are several different shells, and you may not like the default shell. If you'd like to change your shell, type ypchsh. The 
+        %code /usr/bin/chsh 
+        program (short for change shell) will display your old shell and ask you for a new one. Or you can use the  
+        %a{:href=>"http://zoo.cs.yale.edu/accounts.html", :target=>"_blank"} web interface. 
+      %p.text 
+        The list of supported shells in the Zoo includes (but is not limited to):
+        %li 
+          %code /bin/tcsh
+          Tcsh, an enhanced version of the Berkeley UNIX C Shell, csh.
+        %li 
+          %code /bin/bash
+          Bash, the "Bourne Again Shell," which is the standard GNU shell. 
+        %li 
+          %code /bin/csh&nbsp;
+          The Berkeley UNIX C shell; considered harmful by some authorities.
+        %li
+          %code /bin/zsh&nbsp;
+          Zsh, the Z Shell, designed for compatibility with ksh, the Korn Shell.
+        %li 
+          %code /bin/sh &nbsp;
+          The generic Bourne shell. Not recommended.
+      %p.big Finger
+      %p.text 
+        The Zoo has a directory lookup command called 
+        %b finger
+        that allows you to get information about students from their netid
+        %code.block
+          > finger jrg45
+          %br
+          Login: jrg45
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          Name: Julian Graham
+          %br
+          Directory: /home/accts/jrg45
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          Shell: /bin/bash
+          %br
+          On since Sat Nov  2 21:41 (EST) on pts/7 from yale128036064065.student.yale.edu
+          %br 
+          On since Fri Nov  1 16:27 (EST) on pts/8 from yale128036064065.student.yale.edu
+          %br 
+          &nbsp;&nbsp;&nbsp;306 days 3 hours idle
+          %br
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(messages off)
+          %br
+          &nbsp;&nbsp;&nbsp;Mail forwarded to julian.graham@yale.edu
+          %br
+          &nbsp;&nbsp;&nbsp;No mail.
+
+      %p.big .plan, .project
+      %p.text .plan and .project files often contain interesting or humorous passages, You can create your own .plan/.project by editing the .plan file in your home directory and making it/them world readable. Remember that, in order for other people to be able to read your .project and .plan, your home directory itself must be world-accessible (via chmod o+x, perhaps).
+      

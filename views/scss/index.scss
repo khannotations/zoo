@@ -1,0 +1,35 @@
+.zoo-top {
+  height: 100%;
+}
+.main-text {
+  margin-top: 15%;
+}
+
+.zoo-desc {
+  margin-left: 5%;
+  vertical-align: middle;
+  text-align: justify;
+}
+$bar-height: 50px;
+.zoo-main-bar {
+  width: 800px;
+  line-height: $bar-height;
+  margin-top: 15%;
+  table-layout: fixed;
+  border: 1pt solid rgba(lighten($yale-blue, 30%), 0.5);
+  text-align: center;
+  color: #555;
+  td {
+    cursor: pointer;
+    background-color: rgba(white, 0.3);
+    height: $bar-height;
+    &:hover {
+      background-color: rgba(white, 0.9);
+      color: black;
+      @include transition(all 0.2s);
+    }
+  }
+  i {
+    margin-right: 4px;
+  }
+}

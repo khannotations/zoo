@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'MyMyriad';
+  font-style: normal;
+  font-weight: 200;
+  src: local("MyMyriad"), 
+    url(/fonts/myriad/MyriadPro-LightSemiExt.otf) format("opentype");
+}
+
+@font-face {
+  font-family: 'MyMyriad';
+  font-style: normal;
+  font-weight: normal;
+  src: local("MyMyriad"), 
+    url(/fonts/myriad/MyriadPro-Regular.otf) format("opentype");
+}
+@font-face {
+  font-family: 'MyMyriad';
+  font-style: normal;
+  font-weight: bold;
+  src: local("MyMyriad"), 
+    url(/fonts/myriad/MyriadPro-Semibold.otf) format("opentype");
+}

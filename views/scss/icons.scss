@@ -1,0 +1,21 @@
+i {
+  display: inline-block;
+  width: $font;
+  height: $font;
+  line-height: $font;
+  vertical-align: text-top;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+i.info {
+  background-image: url(/images/icons/info.png);
+}
+
+i.accounts {
+  background-image: url(/images/icons/accounts.png);
+}
+
+i.access {
+  background-image: url(/images/icons/key.png);
+}
