@@ -3,13 +3,16 @@
     .contain
       %p.header Tips and Tricks
       %p.big Printing
-      %p.text You can print from a Zoo machine application, from the shell, or remotely.
+      %p.text You can print from an application, from the shell, or remotely. Printing is free, but please don't abuse it!
       %p.text 
         From the shell, you can use 
         %b lpr:
       %code.block
         > lpr &lt;filename&gt;
-        %span.grey # print the file given by filename on zoo1, the default printer. The file may be plain text or Postscript formatted.
+        %span.grey # print the file given by filename on zoo1, the default printer. 
+        %br 
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+        %span.grey # The file may be plain text or Postscript formatted.
         %br
         > lpr -P zoo2 &lt;filename&gt;
         %span.grey # print filename on zoo2.
