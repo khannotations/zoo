@@ -1,5 +1,8 @@
 .zoo-top {
   height: 100%;
+  > .container {
+    position: relative;
+  }
 }
 .main-text {
   margin-top: 15%;
@@ -12,9 +15,12 @@
 }
 $bar-height: 50px;
 .zoo-main-bar {
+  position: absolute;
   width: 800px;
   line-height: $bar-height;
-  margin-top: 15%;
+  left: 0;
+  bottom: -150px;
+  // margin-top: 15%;
   table-layout: fixed;
   border: 1pt solid rgba(lighten($yale-blue, 30%), 0.5);
   text-align: center;

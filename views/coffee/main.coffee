@@ -81,7 +81,7 @@ $(document).ready ->
                                                         # assumes it's last week...
                   n.time = "for #{day.fromNow(true)}."
                 else if /\w\w\w \d\d/.test theTime      # e.g. Jan 23
-                  n.time = "since #{theTime}"
+                  n.time = "for a minuuuuuute"
                 else
                   n.time ||= "for an unknown amount of time"
 
@@ -149,8 +149,9 @@ $(document).ready ->
     $(backs[num]).addClass "shown"
   , 10000
 
+  zooBarBottom = $(".zoo-main-bar").offset().top + $(".zoo-main-bar").height()
   $(window).scroll ->
-    if $("body").scrollTop() < $(window).height() - 40 
+    if $("body").scrollTop() < zooBarBottom
       $("#zoo-nav").slideUp("fast")
     else
       $("#zoo-nav").slideDown("fast")
