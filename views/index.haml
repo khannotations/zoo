@@ -4,16 +4,18 @@
       %p.header.main-text The Zoo at Yale University
       .zoo-desc.inline-block
         %p 
-          The Zoo is a 
-          %b cluster of 38 multiprocessor Intel computers 
-          available for Yale Computer Science students. Each node—named after a different animal—is running either Linux (openSUSE) or Windows. 
+          The Zoo is 
+          %b a physical room 
+          in the Computer Science building, Arthur K. Watson Hall, where Yale Computer Science students . In that room, there are 36 multiprocessor Intel computers available for Yale Computer Science students. The computers are 
+          %b clustered
+          which means they're connected and the files on your account in one are available on every other machine. Each node, or computer—named after a different animal—is running either Linux (openSUSE) or Windows. 
 
     %table.zoo-main-bar.zoo-bar
       = haml :nav
 .panels
   = haml :info
+  = haml :availability
   = haml :ssh
-  = haml :tricks
+  = haml :tips
   = haml :dsac
   = haml :faq
-  = haml :playground

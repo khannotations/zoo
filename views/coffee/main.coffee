@@ -100,20 +100,39 @@ $(document).ready ->
       , 300
 
   nodes = {}
-  $.get("http://bumblebee.zoo.cs.yale.edu:6789/zoo", (data) ->
+  $(".overlay-text").html "Data for this node unknown"
+  $.get("http://python.zoo.cs.yale.edu:6789/zoo", (data) ->
     if data
       lines = data.split "\n"
       for line in lines
         entries = line.split "|"
         if entries.length is 8
           node = entries[6].replace /^\s+|\s+$/g, ""
-          if node in animals 
+          if node in animals
+            nodes[node] ||= {}
+            n = nodes[node]
+            n.num ||= 0
+            n.num++
             ip = entries[5]
-            if ip and /\./.test ip
-              nodes[node] = true
-      for key,val of nodes
-        $("td[name=#{key}]").addClass "used"
-        
+            if ip and (not /d/.test entries[4]) and (not /\./.test ip)
+              n.used = true
+              if /:/.test entries[4]
+                n.time = "perhaps #{entries[4]} hours" 
+              else
+                n.time ||= "an unknown amount of time"
+
+      for animal in animals
+        node = nodes[animal]
+        if node and node.used
+          $("td[name=#{animal}]")
+            .addClass("used")
+            .find(".overlay-text")
+            .html "<b>#{animal}</b> has been in use<br/>for #{node.time}"
+        else
+          $("td[name=#{animal}]")
+            .addClass("free")
+            .find(".overlay-text")
+            .html "<b>#{animal}</b> is available!"
     else
       alert "Zoo availability data unavailable :("
   )

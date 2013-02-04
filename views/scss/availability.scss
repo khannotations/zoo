@@ -1,0 +1,53 @@
+.animal-table {
+  table-layout: fixed;
+  td {
+    position: relative;
+    padding: 0 3px;
+    max-width: 100px;
+    min-width: 50px;
+    background-color: rgba(#555, 0.2);
+    vertical-align: top;
+    cursor: pointer;
+    &:hover .overlay {
+      opacity: 1;
+    }
+    &.free {
+      background-color: rgba(green, 0.2);
+    }
+    &.used {
+      background-color: rgba(red, 0.2);
+    }
+  }
+  img {
+    width: 200px;
+  }
+  &.small {
+    margin-left: 21%;
+  }
+  .caption {
+    margin-top: 10px;
+    text-align: center;
+    font-weight: normal;
+  }
+  .overlay {
+    position: absolute;
+    width: 100%; height: 100%;
+    top: 0; left: 0;
+    opacity: 0;
+    background-color: rgba(black, 0.7);
+    @include transition(opacity 0.2s);
+  }
+  .overlay-text {
+    color: white;
+    vertical-align: middle;
+    text-align: left;
+    padding: 15%;
+    font-size: 70%;
+    line-height: normal;
+  }
+}
+
+.break {
+  margin-top: 50px;
+  height: 0;
+}

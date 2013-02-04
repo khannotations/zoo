@@ -1,9 +1,9 @@
 i {
   display: inline-block;
-  width: $font;
-  height: $font;
-  line-height: $font;
-  vertical-align: text-top;
+  width: $font+2;
+  height: $font+2;
+  line-height: $font+2;
+  vertical-align: top;
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -12,12 +12,16 @@ i.info {
   background-image: url(/images/icons/info.png);
 }
 
+i.availability {
+  background-image: url(/images/icons/availability.png);
+}
+
 i.ssh {
   background-image: url(/images/icons/ssh.png);
 }
 
-i.tricks {
-  background-image: url(/images/icons/key.png);
+i.tips {
+  background-image: url(/images/icons/tips.png);
 }
 
 i.dsac {
@@ -26,6 +30,12 @@ i.dsac {
 
 i.faq {
   background-image: url(/images/icons/faq.png);
+}
+
+/* Unused */
+
+i.tricks {
+  background-image: url(/images/icons/key.png);
 }
 
 i.playground {

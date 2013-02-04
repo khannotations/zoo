@@ -1,7 +1,8 @@
-.panel{:name => "playground"}
+.panel{:name => "availability"}
   .container
     .contain
-      %p.header Playground
+      %p.header Availability
+      %p.text See which Zoo machines are open!
       - animals = %w(viper hornet cricket newt termite python cicada bumblebee cobra frog tick turtle aphid ladybug chameleon rattlesnake scorpion perch gator grizzly cardinal giraffe swan rhino monkey lion hare tiger zebra hippo jaguar macaw peacock raven hawk woodpecker)
       - animals.sort.each do |a|
         - puts "\"#{a}\","
@@ -12,6 +13,8 @@
           - 6.times do |num|
             - a = animals[num]
             %td{:name => "#{a}"}
+              .overlay
+                .overlay-text
               %img{:src => "/images/animals/#{a}.jpg"}
               %p.caption= a
       .break
@@ -20,12 +23,16 @@
           - 6.times do |num|
             - a = animals[num+6]
             %td{:name => "#{a}"}
+              .overlay
+                .overlay-text
               %img{:src => "/images/animals/#{a}.jpg"}
               %p.caption= a
         %tr
           - 6.times do |num|
             - a = animals[num+12]
             %td{:name => "#{a}"}
+              .overlay
+                .overlay-text
               %img{:src => "/images/animals/#{a}.jpg"}
               %p.caption= a
       .break
@@ -37,6 +44,8 @@
           - 4.times do |num|
             - a = animals[num+18]
             %td{:name => "#{a}"}
+              .overlay
+                .overlay-text
               %img{:src => "/images/animals/#{a}.jpg"}
               %p.caption= a
       .break
@@ -46,6 +55,8 @@
           - 7.times do |num|
             - a = animals[num+22]
             %td{:name => "#{a}"}
+              .overlay
+                .overlay-text
               %img{:src => "/images/animals/#{a}.jpg"}
               %p.caption= a
       %table.animal-table
@@ -53,6 +64,8 @@
           - 7.times do |num|
             - a = animals[num+29]
             %td{:name => "#{a}"}
+              .overlay
+                .overlay-text
               %img{:src => "/images/animals/#{a}.jpg"}
               %p.caption= a
 
