@@ -1,13 +1,5 @@
 $(document).ready ->
   ZOOMACHINE = "python"
-  $.fn.smartbg = (url, time, cb) ->
-    t = this
-    # create an img so the browser will download the image: 
-    $("<img />").attr("src", url).load ->
-      $(t).css "backgroundImage", "url(#{url})"
-      $(t).fadeIn time, ->
-        cb t if typeof cb is "function"
-    this
   animals = [
     "aphid",
     "bumblebee",
@@ -46,6 +38,76 @@ $(document).ready ->
     "woodpecker",
     "zebra"
   ]
+  $.fn.smartbg = (url, time, cb) ->
+    t = this
+    # create an img so the browser will download the image: 
+    $("<img />").attr("src", url).load ->
+      $(t).css "backgroundImage", "url(#{url})"
+      $(t).fadeIn time, ->
+        cb t if typeof cb is "function"
+    this
+
+  getAvailability = ->
+    console.log "fetching availability..."
+    $.get("http://#{ZOOMACHINE}.zoo.cs.yale.edu:6789/zoo", (data) ->
+      if data
+        nodes = {}
+        lines = data.split "\n"
+        for line in lines
+          entries = line.split "|"
+          if entries.length is 8
+            # entries[6] is the node name
+            node = entries[6].replace /^\s+|\s+$/g, ""  # Trim whitespace
+            if node in animals
+              nodes[node] ||= {}
+              n = nodes[node]
+              n.num ||= 0                               # Just for curiosity
+              n.num++                                   # keep track of number
+              ip = entries[5]
+              # Considered in use if at least one ip field reads 'console'
+              if /console/.test ip
+                n.used = true
+                theTime = entries[2]
+                if /\w\w\w \d+:\d+/.test theTime        # e.g. Thu 21:45
+                  day = moment(theTime, "ddd HH:mm")    # Parse the date
+                  day.year(moment().year())             # Manually set year
+                  day.month(moment().month())           # and month
+                  weekDay = theTime.split(" ")[1]
+                  if weekDay is moment().format("ddd")  # If it's today, set date
+                    day.day(moment().day())             # to today
+                  else                                  # Otherwise, assume it's 
+                    day.day(moment().day() - 1)         # yesterday
+                  day.add 'w', 1                        # When setting date, moment 
+                                                        # assumes it's last week...
+                  n.time = "for #{day.fromNow(true)}."
+                else if /\w\w\w \d\d/.test theTime      # e.g. Jan 23
+                  n.time = "since #{theTime}"
+                else
+                  n.time ||= "for an unknown amount of time"
+
+        for animal in animals
+          node = nodes[animal]
+          if node and node.used
+            $("td[name=#{animal}]")
+              .addClass("used")
+              .find(".overlay-text")              # Set the overlay text 
+              .html "<b>#{animal}</b> has been in use #{node.time}"
+          else
+            $("td[name=#{animal}]")
+              .addClass("free")
+              .find(".overlay-text")
+              .html "<b>#{animal}</b> is available!"
+      else
+        alert "Zoo availability data unavailable :("
+        clearInterval(availabilityInterval) if availabilityInterval
+    ).error ->
+      alert "Zoo availability data unavailable :("
+      clearInterval(availabilityInterval) if availabilityInterval
+
+  availabilityInterval = setInterval getAvailability, 60*1000
+  getAvailability()
+
+
   # Background images are just the prettiest animals
   bImages = [
     "cardinal.jpg",
@@ -100,43 +162,5 @@ $(document).ready ->
         scrollTop: dest-40
       , 300
 
-  nodes = {}
   $(".overlay-text").html "Data for this node unknown"
-  $.get("http://#{ZOOMACHINE}.zoo.cs.yale.edu:6789/zoo", (data) ->
-    if data
-      lines = data.split "\n"
-      for line in lines
-        entries = line.split "|"
-        if entries.length is 8
-          node = entries[6].replace /^\s+|\s+$/g, ""  # Trim whitespace
-          if node in animals
-            nodes[node] ||= {}
-            n = nodes[node]
-            n.num ||= 0                               # Just for curiosity
-            n.num++                                   # keep track of number
-            ip = entries[5]
-            # Considered in use if connections don't have a valid ip
-            # and each process is younger than 1 day old
-            if ip and (not /d/.test entries[4]) and (not /\./.test ip)
-              n.used = true
-              if /:/.test entries[4]
-                n.time = "perhaps #{entries[4]} hours" 
-              else
-                n.time ||= "an unknown amount of time"
-
-      for animal in animals
-        node = nodes[animal]
-        if node and node.used
-          $("td[name=#{animal}]")
-            .addClass("used")
-            .find(".overlay-text")              # Set the overlay text 
-            .html "<b>#{animal}</b> has been in use<br/>for #{node.time}"
-        else
-          $("td[name=#{animal}]")
-            .addClass("free")
-            .find(".overlay-text")
-            .html "<b>#{animal}</b> is available!"
-    else
-      alert "Zoo availability data unavailable :("
-  ).error ->
-    alert "Zoo availability data unavailable :("
+  
