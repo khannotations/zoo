@@ -1,4 +1,5 @@
 $(document).ready ->
+  ZOOMACHINE = "python"
   $.fn.smartbg = (url, time, cb) ->
     t = this
     # create an img so the browser will download the image: 
@@ -101,19 +102,21 @@ $(document).ready ->
 
   nodes = {}
   $(".overlay-text").html "Data for this node unknown"
-  $.get("http://python.zoo.cs.yale.edu:6789/zoo", (data) ->
+  $.get("http://#{ZOOMACHINE}.zoo.cs.yale.edu:6789/zoo", (data) ->
     if data
       lines = data.split "\n"
       for line in lines
         entries = line.split "|"
         if entries.length is 8
-          node = entries[6].replace /^\s+|\s+$/g, ""
+          node = entries[6].replace /^\s+|\s+$/g, ""  # Trim whitespace
           if node in animals
             nodes[node] ||= {}
             n = nodes[node]
-            n.num ||= 0
-            n.num++
+            n.num ||= 0                               # Just for curiosity
+            n.num++                                   # keep track of number
             ip = entries[5]
+            # Considered in use if connections don't have a valid ip
+            # and each process is younger than 1 day old
             if ip and (not /d/.test entries[4]) and (not /\./.test ip)
               n.used = true
               if /:/.test entries[4]
@@ -126,7 +129,7 @@ $(document).ready ->
         if node and node.used
           $("td[name=#{animal}]")
             .addClass("used")
-            .find(".overlay-text")
+            .find(".overlay-text")              # Set the overlay text 
             .html "<b>#{animal}</b> has been in use<br/>for #{node.time}"
         else
           $("td[name=#{animal}]")
@@ -135,4 +138,5 @@ $(document).ready ->
             .html "<b>#{animal}</b> is available!"
     else
       alert "Zoo availability data unavailable :("
-  )
+  ).error ->
+    alert "Zoo availability data unavailable :("
