@@ -1,2 +1,6 @@
 # Java class files
 *.class
+
+# Sass cache
+
+.sass-cache/*
