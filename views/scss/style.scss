@@ -131,6 +131,11 @@ code {
   }
 }
 
+.footer {
+  background-color: rgba(white, 0.5);
+  border-top: 1pt solid white;
+}
+
 @import "icons";
 @import "index";
 @import "availability";
