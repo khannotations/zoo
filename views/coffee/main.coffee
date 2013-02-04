@@ -79,7 +79,7 @@ $(document).ready ->
                     day.day(moment().day() - 1)         # yesterday
                   day.add 'w', 1                        # When setting date, moment 
                                                         # assumes it's last week...
-                  n.time = "for #{day.fromNow(true)}."
+                  n.time = "for about #{day.fromNow(true)}."
                 else if /\w\w\w \d\d/.test theTime      # e.g. Jan 23
                   n.time = "for a minuuuuuute"
                 else
