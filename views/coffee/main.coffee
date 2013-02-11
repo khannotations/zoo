@@ -73,12 +73,10 @@ $(document).ready ->
                   day.year(moment().year())             # Manually set year
                   day.month(moment().month())           # and month
                   weekDay = theTime.split(" ")[1]
-                  if weekDay is moment().format("ddd")  # If it's today, set date
-                    day.day(moment().day())             # to today
-                  else                                  # Otherwise, assume it's 
-                    day.day(moment().day() - 1)         # yesterday
-                  day.add 'w', 1                        # When setting date, moment 
-                                                        # assumes it's last week...
+                  day.date(moment().date())             # Assume it's today
+                  if weekDay isnt moment().format("ddd")# If the days don't match
+                    day.sub 'd', 1                      # assume it's yesterdayyesterday
+                  
                   n.time = "for about #{day.fromNow(true)}."
                 else if /\w\w\w \d\d/.test theTime      # e.g. Jan 23
                   n.time = "for a minuuuuuute"
@@ -98,10 +96,10 @@ $(document).ready ->
               .find(".overlay-text")
               .html "<b>#{animal}</b> is available!"
       else
-        alert "Zoo availability data unavailable :("
+        alert "Zoo availability data unavailable :( Try refreshing the page."
         clearInterval(availabilityInterval) if availabilityInterval
     ).error ->
-      alert "Zoo availability data unavailable :("
+      alert "Zoo availability data unavailable :( Try refreshing the page."
       clearInterval(availabilityInterval) if availabilityInterval
 
   availabilityInterval = setInterval getAvailability, 60*1000
