@@ -98,9 +98,17 @@ $(document).ready ->
               .find(".overlay-text")
               .html "<b>#{animal}</b> is available!"
       else
+        $(".animal-table td")
+          .removeClass("used free")
+          .find(".overlay-text")
+          .html("Availability data unavailable")
         alert "Zoo availability data unavailable :( Try refreshing the page."
         clearInterval(availabilityInterval) if availabilityInterval
     , "text").error ->
+      $(".animal-table td")
+        .removeClass("used free")
+        .find(".overlay-text")
+        .html("Availability data unavailable")
       alert "Zoo availability data unavailable :( Try refreshing the page."
       clearInterval(availabilityInterval) if availabilityInterval
 
