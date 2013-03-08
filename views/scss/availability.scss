@@ -1,7 +1,6 @@
 .animal-table {
   table-layout: fixed;
   td {
-    position: relative;
     max-width: 100px;
     min-width: 50px;
     background-color: rgba(#555, 0.2);
@@ -24,10 +23,19 @@
   &.small {
     margin-left: 21%;
   }
+  &.aisle {
+    margin-left: 80%;
+  }
   .caption {
     margin-top: 10px;
     text-align: center;
     font-weight: normal;
+  }
+  .overlay-container {
+    position: relative;
+    min-height: 100%;
+    height: 100%;
+    width: 100%;
   }
   .overlay {
     position: absolute;

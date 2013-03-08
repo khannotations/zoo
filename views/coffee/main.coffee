@@ -100,7 +100,7 @@ $(document).ready ->
       else
         alert "Zoo availability data unavailable :( Try refreshing the page."
         clearInterval(availabilityInterval) if availabilityInterval
-    ).error ->
+    , "text").error ->
       alert "Zoo availability data unavailable :( Try refreshing the page."
       clearInterval(availabilityInterval) if availabilityInterval
 

@@ -4,73 +4,62 @@
       %p.header Availability
       %p.text See which Zoo machines are open! The layout below approximates the physical layout of the Zoo.
       - animals = %w(viper hornet cricket newt termite python cicada bumblebee cobra frog tick turtle aphid ladybug chameleon rattlesnake scorpion perch dolphin kangaroo gator grizzly cardinal giraffe swan rhino monkey lion hare tiger zebra hippo jaguar macaw peacock raven hawk woodpecker)
-      - animals.sort.each do |a|
-        - puts "\"#{a}\","
+      - sizes = [6, 6, 6, 1, 1, 4, 7, 7]
+      - index = 0
+      - offset = 0
 
       %p.big Open Zoo
       %table.animal-table
         %tr
-          - 6.times do |num|
-            - a = animals[num]
-            = haml :animal_cell, :locals => {:a => a}
+          - sizes[index].times do |num|
+            = haml :animal_cell, :locals => {:a => animals[num+offset]}
+          - offset += sizes[index]
+          - index += 1
       .break
       %table.animal-table
         %tr
-          - 6.times do |num|
-            - a = animals[num+6]
-            %td{:name => "#{a}"}
-              .overlay
-                .overlay-text
-              %img{:src => "/images/animals/#{a}.jpg"}
-              %p.caption= a
+          - sizes[index].times do |num|
+            = haml :animal_cell, :locals => {:a => animals[num+offset]}
+          - offset += sizes[index]
+          - index += 1
         %tr
-          - 6.times do |num|
-            - a = animals[num+12]
-            %td{:name => "#{a}"}
-              .overlay
-                .overlay-text
-              %img{:src => "/images/animals/#{a}.jpg"}
-              %p.caption= a
+          - sizes[index].times do |num|
+            = haml :animal_cell, :locals => {:a => animals[num+offset]}
+          - offset += sizes[index]
+          - index += 1
       .break
       %table.animal-table.aisle
         %tr
-          - 2.times do |num|
-            - a = animals[num+18]
-            %td{:name => "#{a}"}
-              .overlay
-                .overlay-text
-              %img{:src => "/images/animals/#{a}.jpg"}
-              %p.caption=a
+          - sizes[index].times do |num|
+            = haml :animal_cell, :locals => {:a => animals[num+offset]}
+          - offset += sizes[index]
+          - index += 1
+        %tr
+          - sizes[index].times do |num|
+            = haml :animal_cell, :locals => {:a => animals[num+offset]}
+          - offset += sizes[index]
+          - index += 1
 
       %p.big Closed Zoo (AKW 300)
 
       %table.animal-table.small
         %tr
-          - 4.times do |num|
-            - a = animals[num+20]
-            %td{:name => "#{a}"}
-              .overlay
-                .overlay-text
-              %img{:src => "/images/animals/#{a}.jpg"}
-              %p.caption= a
+          - sizes[index].times do |num|
+            = haml :animal_cell, :locals => {:a => animals[num+offset]}
+          - offset += sizes[index]
+          - index += 1
       .break
 
       %table.animal-table
         %tr
-          - 7.times do |num|
-            - a = animals[num+24]
-            %td{:name => "#{a}"}
-              .overlay
-                .overlay-text
-              %img{:src => "/images/animals/#{a}.jpg"}
-              %p.caption= a
+          - sizes[index].times do |num|
+            = haml :animal_cell, :locals => {:a => animals[num+offset]}
+          - offset += sizes[index]
+          - index += 1
       %table.animal-table
         %tr
-          - 7.times do |num|
-            - a = animals[num+31]
-            %td{:name => "#{a}"}
-              .overlay
-                .overlay-text
-              %img{:src => "/images/animals/#{a}.jpg"}
-              %p.caption= a
+          - sizes[index].times do |num|
+            = haml :animal_cell, :locals => {:a => animals[num+offset]}
+          - offset += sizes[index]
+          - index += 1
 
