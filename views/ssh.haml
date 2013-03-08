@@ -2,32 +2,32 @@
   .container
     .contain
       %p.header SSH
-      %p.text 
+      %p.text
         SSH stands for
         %b Secure Shell.
-        It's a way to securely communicate between computers, whether for transfering data or remote command executions. You can always ssh into the Zoo, and do your work from the comfort of wherever you happen to be. All you need is an internet connection on the Yale network and Terminal (on Mac) or Cygwin (for PCs). 
+        It's a way to securely communicate between computers, whether for transfering data or remote command executions. You can always ssh into the Zoo, and do your work from the comfort of wherever you happen to be. All you need is an internet connection on the Yale network and Terminal (on Mac) or Cygwin (for PCs). Other possibilities are X-Win32 for Windows machines and X11 or XQuartz from Macs.
       %p.text
         To log in, open up your shell and type
         %code.block
           > ssh -X &lt;netid&gt;@node.zoo.cs.yale.edu
-        After entering your password, you'll be assigned the animal (cluster node) that is being used the least. If you find you get attached to particular animal, (many people do—say the lion), then you can go ahead and 
-        %code ssh -X &lt;netid&gt;@lion.zoo.cs.yale.edu 
+        After entering your password, you'll be assigned the animal (cluster node) that is being used the least. If you find you get attached to particular animal, (many people do—say the lion), then you can go ahead and
+        %code ssh -X &lt;netid&gt;@lion.zoo.cs.yale.edu
         You can then do anything you would be able to from the shell on that Zoo computer.
       %p.big Copying files
-      %p.text 
-        On UNIX machines, you can copy files to and from the Zoo with 
+      %p.text
+        On UNIX machines, you can copy files to and from the Zoo with
         %b scp.
         %code.block
           > scp -r &lt;netid&gt;@node.zoo.cs.yale.edu:~/sample_directory .
-      %p.text 
-        This will copy all the code in 
+      %p.text
+        This will copy all the code in
         %b sample_directory
         in your home folder to the current directory where you are scp-ing from (Don't forget the period at the end!).
       %p.text
         On non UNIX machines, try Googling for FTP clients for your system.
 
       %p.text
-        You can read more on Wikipedia: 
+        You can read more on Wikipedia:
         %a{:href => "http://en.wikipedia.org/wiki/Secure_Shell", :target => "_blank"} SSH
         |
         %a{:href => "http://en.wikipedia.org/wiki/Secure_copy", :target => "_blank"} SCP

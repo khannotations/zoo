@@ -3,7 +3,7 @@
     .contain
       %p.header Availability
       %p.text See which Zoo machines are open! The layout below approximates the physical layout of the Zoo.
-      - animals = %w(viper hornet cricket newt termite python cicada bumblebee cobra frog tick turtle aphid ladybug chameleon rattlesnake scorpion perch gator grizzly cardinal giraffe swan rhino monkey lion hare tiger zebra hippo jaguar macaw peacock raven hawk woodpecker)
+      - animals = %w(viper hornet cricket newt termite python cicada bumblebee cobra frog tick turtle aphid ladybug chameleon rattlesnake scorpion perch dolphin kangaroo gator grizzly cardinal giraffe swan rhino monkey lion hare tiger zebra hippo jaguar macaw peacock raven hawk woodpecker)
       - animals.sort.each do |a|
         - puts "\"#{a}\","
 
@@ -12,11 +12,7 @@
         %tr
           - 6.times do |num|
             - a = animals[num]
-            %td{:name => "#{a}"}
-              .overlay
-                .overlay-text
-              %img{:src => "/images/animals/#{a}.jpg"}
-              %p.caption= a
+            = haml :animal_cell, :locals => {:a => a}
       .break
       %table.animal-table
         %tr
@@ -36,13 +32,22 @@
               %img{:src => "/images/animals/#{a}.jpg"}
               %p.caption= a
       .break
+      %table.animal-table.aisle
+        %tr
+          - 2.times do |num|
+            - a = animals[num+18]
+            %td{:name => "#{a}"}
+              .overlay
+                .overlay-text
+              %img{:src => "/images/animals/#{a}.jpg"}
+              %p.caption=a
 
       %p.big Closed Zoo (AKW 300)
 
       %table.animal-table.small
         %tr
           - 4.times do |num|
-            - a = animals[num+18]
+            - a = animals[num+20]
             %td{:name => "#{a}"}
               .overlay
                 .overlay-text
@@ -53,7 +58,7 @@
       %table.animal-table
         %tr
           - 7.times do |num|
-            - a = animals[num+22]
+            - a = animals[num+24]
             %td{:name => "#{a}"}
               .overlay
                 .overlay-text
@@ -62,7 +67,7 @@
       %table.animal-table
         %tr
           - 7.times do |num|
-            - a = animals[num+29]
+            - a = animals[num+31]
             %td{:name => "#{a}"}
               .overlay
                 .overlay-text

@@ -4,49 +4,49 @@
       %p.header Tips and Tricks
       %p.big Printing
       %p.text You can print from an application, from the shell, or remotely. Printing is free, but please don't abuse it!
-      %p.text 
-        From the shell, you can use 
+      %p.text
+        From the shell, you can use
         %b lpr:
       %code.block
         > lpr &lt;filename&gt;
-        %span.grey # print the file given by filename on zoo1, the default printer. 
-        %br 
+        %span.grey # print the file given by filename on zoo1, the default printer.
+        %br
         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
         %span.grey # The file may be plain text or Postscript formatted.
         %br
         > lpr -P zoo2 &lt;filename&gt;
         %span.grey # print filename on zoo2.
         %br
-        > lpr -K n &lt;filename&gt; 
+        > lpr -K n &lt;filename&gt;
         %span.grey # print n copies of filename on the default printer, zoo1.
       %p.big Changing your shell
-      %p.text 
+      %p.text
         When you log in and get to a prompt the operating system starts a program called a shell, which allows you to launch programs and interact with the file system. All commands you type at the shell's prompt are interpreted and executed by the shell.
-      %p.text 
-        There are several different shells, and you may not like the default shell. If you'd like to change your shell, type ypchsh. The 
-        %code /usr/bin/chsh 
-        program (short for change shell) will display your old shell and ask you for a new one. Or you can use the  
-        %a{:href=>"http://zoo.cs.yale.edu/accounts.html", :target=>"_blank"} web interface. 
-      %p.text 
+      %p.text
+        There are several different shells, and you may not like the default shell. If you'd like to change your shell, type ypchsh. The
+        %code /usr/bin/chsh
+        program (short for change shell) will display your old shell and ask you for a new one. Or you can use the
+        %a{:href=>"http://zoo.cs.yale.edu/accounts.html", :target=>"_blank"} web interface.
+      %p.text
         The list of supported shells in the Zoo includes (but is not limited to):
-        %li 
+        %li
           %code /bin/tcsh
           Tcsh, an enhanced version of the Berkeley UNIX C Shell, csh.
-        %li 
+        %li
           %code /bin/bash
-          Bash, the "Bourne Again Shell," which is the standard GNU shell. 
-        %li 
+          Bash, the "Bourne Again Shell," which is the standard GNU shell.
+        %li
           %code /bin/csh&nbsp;
-          The Berkeley UNIX C shell; considered harmful by some authorities.
+          The Berkeley UNIX C shell; considered harmful by some authorities. On the Zoo, this is just a link to tcsh.
         %li
           %code /bin/zsh&nbsp;
           Zsh, the Z Shell, designed for compatibility with ksh, the Korn Shell.
-        %li 
+        %li
           %code /bin/sh &nbsp;
-          The generic Bourne shell. Not recommended.
+          The generic Bourne shell. Not recommended. On the Zoo, this is just a link to bash.
       %p.big Finger
-      %p.text 
-        The Zoo has a directory lookup command called 
+      %p.text
+        The Zoo has a directory lookup command called
         %b finger
         that allows you to get information about students from their netid
         %code.block
@@ -61,9 +61,9 @@
           Shell: /bin/bash
           %br
           On since Sat Nov  2 21:41 (EST) on pts/7 from yale128036064065.student.yale.edu
-          %br 
+          %br
           On since Fri Nov  1 16:27 (EST) on pts/8 from yale128036064065.student.yale.edu
-          %br 
+          %br
           &nbsp;&nbsp;&nbsp;306 days 3 hours idle
           %br
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(messages off)
@@ -74,4 +74,3 @@
 
       %p.big .plan, .project
       %p.text .plan and .project files often contain interesting or humorous passages, You can create your own .plan/.project by editing the .plan file in your home directory and making it/them world readable. Remember that, in order for other people to be able to read your .project and .plan, your home directory itself must be world-accessible (via chmod o+x, perhaps).
-      

@@ -8,6 +8,7 @@ $(document).ready ->
     "cicada",
     "cobra",
     "cricket",
+    "dolphin",
     "frog",
     "gator",
     "giraffe",
@@ -17,6 +18,7 @@ $(document).ready ->
     "hippo",
     "hornet",
     "jaguar",
+    "kangaroo",
     "ladybug",
     "lion",
     "macaw",
@@ -40,7 +42,7 @@ $(document).ready ->
   ]
   $.fn.smartbg = (url, time, cb) ->
     t = this
-    # create an img so the browser will download the image: 
+    # create an img so the browser will download the image:
     $("<img />").attr("src", url).load ->
       $(t).css "backgroundImage", "url(#{url})"
       $(t).fadeIn time, ->
@@ -76,7 +78,7 @@ $(document).ready ->
                   day.date(moment().date())             # Assume it's today
                   if weekDay isnt moment().format("ddd")# If the days don't match
                     day.sub 'd', 1                      # assume it's yesterdayyesterday
-                  
+
                   n.time = "for about #{day.fromNow(true)}."
                 else if /\w\w\w \d\d/.test theTime      # e.g. Jan 23
                   n.time = "for a minuuuuuute"
@@ -88,7 +90,7 @@ $(document).ready ->
           if node and node.used
             $("td[name=#{animal}]")
               .addClass("used")
-              .find(".overlay-text")              # Set the overlay text 
+              .find(".overlay-text")              # Set the overlay text
               .html "<b>#{animal}</b> has been in use #{node.time}"
           else
             $("td[name=#{animal}]")
@@ -111,6 +113,7 @@ $(document).ready ->
     "cardinal.jpg",
     "chameleon.jpg",
     "cobra.jpg",
+    "dolphin.jpg",
     "frog.jpg",
     "gator.jpg",
     "giraffe.jpg",
@@ -119,6 +122,7 @@ $(document).ready ->
     "hawk.jpg",
     "hippo.jpg",
     "jaguar.jpg",
+    "kangaroo.jpg",
     "ladybug.jpg",
     "lion.jpg",
     "macaw.jpg",
@@ -162,4 +166,4 @@ $(document).ready ->
       , 300
 
   $(".overlay-text").html "Data for this node unknown"
-  
+
